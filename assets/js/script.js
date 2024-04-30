@@ -94,7 +94,9 @@ $(document).ready(function () {
             document.body.removeChild(link);
             form.width(cache_width);
 
-            location.reload();
+            setTimeout(function(){
+                location.reload();
+            },7000);
         });
     }
 
