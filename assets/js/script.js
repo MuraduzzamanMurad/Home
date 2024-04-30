@@ -50,9 +50,6 @@ $(document).ready(function () {
     });
 });
 $(document).ready(function () {  
-    //var text = $('.banner-section .single-item.active .title').text();
-    //var image = convertTextToImage(text);
-    //$('.banner-section .single-item.active .title').html(image); 
     var form = ""; 
     $(document).on('click','#downloadButton', function () {
 
@@ -65,6 +62,18 @@ $(document).ready(function () {
         $('.banner-section .single-item.active .title').html(titleImage);
         $('.banner-section .single-item.active .cadidate-name').html(nameImage);
         $('.banner-section .single-item.active .cadidate-designation').html(designationImage);
+
+        $(".banner-section .single-item.active .profile-img-div,.banner-section .single-item.active .profile-img-div img,.banner-section .single-item.active .qrcode-img").css({
+            "min-width": "130px",
+            "max-width": "130px",
+            "width": "130px",
+            "height": "130px"
+        });
+        $(".banner-section .dynamic-data").css({
+            "left": "20px",
+            "right": "20px",
+            "bottom": "20px"
+        });
 
         form = $('.single-item.active .downloadAndPrintContent'),
         cache_width = form.width(),
@@ -84,6 +93,8 @@ $(document).ready(function () {
             link.click();
             document.body.removeChild(link);
             form.width(cache_width);
+
+            location.reload();
         });
     }
 
